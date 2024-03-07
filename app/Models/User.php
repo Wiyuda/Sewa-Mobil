@@ -45,4 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function rent()
+    {
+        $this->hasMany(Rent::class);
+    }
 }
