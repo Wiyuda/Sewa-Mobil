@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CarsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/cart/{id}', [HomeController::class, 'cart'])->name('cart');
+Route::post('/checkout', [HomeController::class, 'checkout'])->name('checkout');
+Route::get('/payment/{id}', [HomeController::class, 'payment'])->name('payment');
+Route::get('/riwayat', [HomeController::class, 'history'])->name('history');
 
 Route::prefix('/admin')->group(function() {
     Route::middleware(['auth', 'role:admin'])->group(function() {
