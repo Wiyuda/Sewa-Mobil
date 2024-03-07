@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CarsController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\RentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -31,6 +32,8 @@ Route::prefix('/admin')->group(function() {
         Route::resource('/cars', CarsController::class);
 
         Route::get('/pengguna', [UserController::class, 'index'])->name('user');
+
+        Route::get('/sewa', [RentController::class, 'index'])->name('sewa');
     });
 });
 
