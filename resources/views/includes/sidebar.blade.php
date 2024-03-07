@@ -2,7 +2,8 @@
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
-      <div class="sidebar-brand-icon rotate-n-15">
+      <div class="sidebar-brand-icon">
+        <i class="fas fa-fw fa-car"></i>
       </div>
       <div class="sidebar-brand-text mx-3">Sewa Mobil</div>
   </a>
@@ -17,6 +18,13 @@
         <span>Dashboard</span>
       </a>
   </li>
+
+  <li class="nav-item active">
+    <a class="nav-link" href="{{ route('cars.index') }}">
+      <i class="fas fa-fw fa-car"></i>
+      <span>Data Mobil</span>
+    </a>
+</li>
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
